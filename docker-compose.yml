@@ -1,0 +1,25 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword      # 必須。任意のパスワードを設定
+      MYSQL_DATABASE: weather_db             # データベース名
+      MYSQL_USER: weather_user               # ユーザー名
+      MYSQL_PASSWORD: weather_password       # ユーザーパスワード
+    ports:
+      - "3308:3306"
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8002:8000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=weather_db
+      - DB_USER=weather_user
+      - DB_PASSWORD=weather_password

@@ -1,0 +1,128 @@
+ /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    width: 95%;
+    max-width: 800px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+/* Title */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Search Form */
+.search-form {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-form label {
+    font-weight: 400;
+    color: #555;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 120px;
+    text-align: center;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.search-form input[type="text"]:focus {
+    border: 2px solid #ff6b6b;
+    outline: none;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: 500;
+}
+
+.search-form button:hover {
+    background-color: #ff3b3b;
+    transform: scale(1.05);
+}
+
+/* Error Message */
+.error {
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Weather Table */
+.weather-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.weather-table th, .weather-table td {
+    padding: 15px;
+    text-align: center;
+}
+
+.weather-table th {
+    background-color: #ff6b6b;
+    color: #fff;
+    font-weight: 600;
+}
+
+.weather-table tr {
+    transition: background 0.2s;
+}
+
+.weather-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.weather-table tr:hover {
+    background-color: #ffe6e6;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+} 
